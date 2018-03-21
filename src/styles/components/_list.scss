@@ -1,0 +1,30 @@
+.list {
+  flex-grow: 1;
+  list-style: none;
+  & > li {
+    border:1px solid darken(#fff, 15);
+  }
+
+  &__column-letter {
+    background-color: darken(#fff, 5);
+    display: flex;
+    justify-content: center;
+  }
+  &__header {
+    background-color: darkblue;
+    color: #fff;
+    font-weight: 700;
+    padding: .8rem;
+  }
+
+  &__item {
+    input,
+    input:focus {
+      border: none;
+      padding: .5rem;
+      // outline: none;
+      width: 100%;
+
+    }
+  }
+}

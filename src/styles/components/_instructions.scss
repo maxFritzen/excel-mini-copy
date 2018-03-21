@@ -1,0 +1,14 @@
+.instructions {
+  background-color: green;
+  color: #fff;
+  border: 1px solid black;
+  margin-top: 1rem;
+  padding: 2rem;
+  
+  &__item {
+
+    &--crossed {
+      text-decoration: line-through;
+    }
+  }
+}

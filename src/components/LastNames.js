@@ -7,6 +7,7 @@ class LastNames extends React.Component {
     this.props.lastNameInput(e.target.value, e.target.id);
   }
   render() {
+    const originalNames =  this.props.originalNames;
     return (
         <ul className='list'>
           <li className="list__column-letter">
@@ -15,43 +16,25 @@ class LastNames extends React.Component {
           <li className="list__header">
             Efternamn
           </li>
-          <li className='list__item'>
-            <input
-              id={this.props.inputNames['person1'].id}
-              value={this.props.inputNames['person1'].lastname}
-              onChange={this.onChange}
-
-            />
-          </li>
-          <li className='list__item'>
-            <input
-              id={this.props.inputNames['person2'].id}
-              value={this.props.inputNames['person2'].lastname}
-              onChange={this.onChange}
-            />
-          </li>
-          <li className='list__item'>
-            <input
-              id={this.props.inputNames['person3'].id}
-              value={this.props.inputNames['person3'].lastname}
-              onChange={this.onChange}
-
-            />
-          </li>
-          <li className='list__item'>
-            <input
-              id={this.props.inputNames['person4'].id}
-              value={this.props.inputNames['person4'].lastname}
-              onChange={this.onChange}
-            />
-          </li>
+          {originalNames.map((item, index) => {
+            return (
+              <li key={index + 'lastname'} className='list__item'>
+               <input
+                 id={this.props.inputNames[`person${index + 1}`].id}
+                 value={this.props.inputNames[`person${index + 1}`].lastname}
+                 onChange={this.onChange}
+                 />
+               </li>
+              )
+            }) }
         </ul>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  inputNames: state.inputNames
+  inputNames: state.inputNames,
+  originalNames: state.originalNames
 })
 
 const mapDispatchToProps = (dispatch) => ({

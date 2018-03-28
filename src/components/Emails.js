@@ -7,6 +7,7 @@ class Emails extends React.Component {
     this.props.emailInput(e.target.value, e.target.id);
   }
   render() {
+    const originalNames =  this.props.originalNames;
     return (
       <ul className='list'>
         <li className="list__column-letter">
@@ -15,41 +16,25 @@ class Emails extends React.Component {
         <li className="list__header">
           Epost (förnamn.efternamn@epost.se)
         </li>
-        <li className='list__item'>
-          <input
-            id={this.props.inputNames['person1'].id}
-            value={this.props.inputNames['person1'].email}
-            onChange={this.onChange}
-          />
-        </li>
-        <li className='list__item'>
-          <input
-            id={this.props.inputNames['person2'].id}
-            value={this.props.inputNames['person2'].email}
-            onChange={this.onChange}
-          />
-        </li>
-        <li className='list__item'>
-          <input
-            id={this.props.inputNames['person3'].id}
-            value={this.props.inputNames['person3'].email}
-            onChange={this.onChange}
-          />
-        </li>
-        <li className='list__item'>
-          <input
-            id={this.props.inputNames['person4'].id}
-            value={this.props.inputNames['person4'].email}
-            onChange={this.onChange}
-          />
-        </li>
+        {originalNames.map((item, index) => {
+          return (
+            <li key={index + 'email'} className='list__item'>
+             <input
+               id={this.props.inputNames[`person${index + 1}`].id}
+               value={this.props.inputNames[`person${index + 1}`].email}
+               onChange={this.onChange}
+               />
+             </li>
+            )
+          }) }
       </ul>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  inputNames: state.inputNames
+  inputNames: state.inputNames,
+  originalNames: state.originalNames
 })
 
 const mapDispatchToProps = (dispatch) => ({

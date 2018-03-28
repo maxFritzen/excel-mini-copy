@@ -1,10 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
+// const Button = withRouter(({ history }) => (
+//   <button
+//     type='button'
+//     onClick={() => { history.push('/results') }}
+//   >
+//     Click Me!
+//   </button>
+// ));
 
 class Instructions extends React.Component {
+  constructor(props){
+    super(props);
+    this.testing = true;
+  }
   render() {
+    const finished = true;//this.props.instructions['inst1'].done && this.props.instructions['inst2'].done && this.props.instructions['inst3'].done;
+    if (finished) {
+
+      // if(this.testing){
+        // this.testing = false;
+        setTimeout (() => {
+          this.props.history.push('/results');
+        }, 2000);
+      // }
+
+    }
     return (
-        <ol className='instructions'>
+
+      <div className="instructions">
+        <ol className="instructions__list">
           Lös nedanstående uppgifter med hjälp av autofyll-funktionen
           <li
             className={this.props.instructions['inst1'].done ? 'instructions__item--crossed' : 'instructions__item'}
@@ -21,6 +48,9 @@ class Instructions extends React.Component {
             {this.props.instructions['inst3'].text}
           </li>
         </ol>
+        {finished && <p>Kalibrerar data</p>}
+      </div>
+
     );
   }
 }
@@ -29,4 +59,5 @@ const mapStateToProps = (state) => ({
   instructions: state.instructions
 });
 
-export default connect(mapStateToProps)(Instructions);
+export default withRouter(connect(mapStateToProps)(Instructions));
+// export default connect(mapStateToProps)(Instructions);

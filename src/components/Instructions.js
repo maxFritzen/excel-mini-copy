@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import LoadingPage from './LoadingPage';
 
 // const Button = withRouter(({ history }) => (
 //   <button
@@ -14,22 +15,16 @@ import { withRouter } from 'react-router-dom';
 class Instructions extends React.Component {
   constructor(props){
     super(props);
-    this.testing = true;
+
   }
   render() {
-    const finished = true;//this.props.instructions['inst1'].done && this.props.instructions['inst2'].done && this.props.instructions['inst3'].done;
+    const finished = this.props.instructions['inst1'].done && this.props.instructions['inst2'].done && this.props.instructions['inst3'].done;
     if (finished) {
-
-      // if(this.testing){
-        // this.testing = false;
         setTimeout (() => {
           this.props.history.push('/results');
         }, 2000);
-      // }
-
     }
     return (
-
       <div className="instructions">
         <ol className="instructions__list">
           Lös nedanstående uppgifter med hjälp av autofyll-funktionen

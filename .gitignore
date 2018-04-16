@@ -2,3 +2,6 @@ node_modules/
 public/dist
 .env.test
 .env.development
+playground/
+public/images/excel-menu-data-pt-1.png
+public/images/excel-menu-data-pt-2.png

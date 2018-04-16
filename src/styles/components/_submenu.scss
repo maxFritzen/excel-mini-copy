@@ -1,0 +1,26 @@
+.submenu {
+  position: relative;
+  &__images {
+    // display: flex;
+    // align-items: center;
+  }
+}
+
+.flashfill {
+  // background-image: url('../../public/images/excel-flashfill.png');
+  height: 6rem;
+  width: 7rem;
+  position: absolute;
+  top:0;
+  right: 39%;
+  border: 1px solid green;
+  opacity:0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}

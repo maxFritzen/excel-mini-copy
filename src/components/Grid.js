@@ -56,7 +56,7 @@ class Grid extends React.Component {
   render() {
     return (
       <div>
-        GRID
+
         {/* <button onClick={this.autoFill}>autoFill</button> */}
         <div className="grid">
           <OriginalNames

@@ -51,13 +51,13 @@ class SubMenu extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>SUB MENU</h1>
+      <div className="submenu">
+
         {this.props.match.params.data == 'file' &&
            <p>FILE</p>
         }
         {this.props.match.params.data == 'home' &&
-           <p>HOME</p>
+           <img src="./images/excel-menu-home.png" alt="" />
         }
         {this.props.match.params.data == 'insert' &&
             <p>INSERT</p>
@@ -69,7 +69,11 @@ class SubMenu extends React.Component {
             <p>FORMULAS</p>
         }
         {this.props.match.params.data == 'data' &&
-            <div>DATA <button onClick={this.autoFill}>AutoFill</button></div>
+            <div className="submenu__images">
+              <img src="./images/excel-menu-data.png" alt="" className="submenu__image" />
+              <img src="./images/excel-flashfill.png" alt="" className="flashfill" onClick={this.autoFill}/>
+
+            </div>
         }
         {this.props.match.params.data == 'review' &&
             <p>REVIEW</p>

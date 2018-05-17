@@ -33,34 +33,6 @@ export const defaultState = {
     }
 }
 
-
-// export const defaultState = {
-//   inputNames: {
-//     'person1': {
-//       id: "person1",
-//       firstname: "",
-//       lastname: "test"
-//     },
-//     "person2": {
-//       id: "person2",
-//       firstname: "",
-//       lastname: ""
-//     }
-//   },
-//
-//   originalNames: [
-//     {
-//       firstname: "Per",
-//       lastname: "Gessle"
-//     },
-//     {
-//       firstname: "Lisa",
-//       lastname: "Ekdahl"
-//     }
-//   ],
-//   text: ''
-// }
-
 export default (state = defaultState, action) => {
   const person = state[action.id];
   switch(action.type) {

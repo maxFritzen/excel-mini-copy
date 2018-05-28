@@ -14,7 +14,7 @@ class Emails extends React.Component {
           D
         </li>
         <li className="list__header">
-          Epost (förnamn.efternamn@epost.se)
+          Email (firstname.lastname@email.com)
         </li>
         {originalNames.map((item, index) => {
           return (
@@ -35,10 +35,10 @@ class Emails extends React.Component {
 const mapStateToProps = (state) => ({
   inputNames: state.inputNames,
   originalNames: state.originalNames
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   emailInput: (text, id) => dispatch(emailInput(text, id))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Emails);

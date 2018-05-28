@@ -14,7 +14,7 @@ class LastNames extends React.Component {
             C
           </li>
           <li className="list__header">
-            Efternamn
+            Last name
           </li>
           {originalNames.map((item, index) => {
             return (
@@ -35,10 +35,10 @@ class LastNames extends React.Component {
 const mapStateToProps = (state) => ({
   inputNames: state.inputNames,
   originalNames: state.originalNames
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   lastNameInput: (text, id) => dispatch(lastNameInput(text, id))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(LastNames);

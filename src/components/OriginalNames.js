@@ -6,7 +6,7 @@ const OriginalNames = (props) => (
       A
     </li>
     <li className="list__header">
-      Namn
+      Names
     </li>
     {props.names.map((name, index) => {
       return (

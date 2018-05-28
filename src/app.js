@@ -15,7 +15,7 @@ const store = configureStore();
 const jsx = (
   <Provider store={store}>
     <div className='content-container'>
-      <HashRouter> 
+      <HashRouter>
         <Switch>
           <Route path="/results" component={Results} />
           <Route path="/main" component={Main} />
@@ -26,14 +26,6 @@ const jsx = (
   </Provider>
 );
 
-{/* // const jsx = (
-//   <Provider store={store}>
-//     <div className='content-container'>
-//       <Grid />
-//       <Instructions />
-//     </div>
-//   </Provider>
-// ); */}
 let hasRendered = false;
 const renderApp =  () => {
   if (!hasRendered) {

@@ -1,5 +1,4 @@
 
-
 export const FNAMEINPUT = 'FNAMEINPUT';
 export const LNAMEINPUT = 'LNAMEINPUT';
 export const EMAILINPUT = 'EMAILINPUT';
@@ -7,17 +6,6 @@ export const DONE = 'DONE';
 export const FILLFIRSTNAMES = 'FILLFIRSTNAMES';
 export const FILLLASTNAMES = 'FILLLASTNAMES';
 export const FILLEMAILS = 'FILLEMAILS';
-
-
-// const extractFirstNames = (array) => {
-//   // const firstNames = [];
-//   // const length = array.length;
-//   // let i;
-// const firstNames = array.map((person) => {
-//     return person.firstname;
-//   });
-//
-// }
 
 export const firstNameInput = (text, id) => {
   return {
@@ -49,7 +37,7 @@ export const done = (instructionId) => {
 }
 
 export const fillFirstNames = (originalNames) => {
-  // const firstNames = extractFirstNames(originalNames);
+
   const firstNames = originalNames.map((person) => {
       return person.firstname;
     });
@@ -60,7 +48,7 @@ export const fillFirstNames = (originalNames) => {
 }
 
 export const fillLastNames = (originalNames) => {
-  // const firstNames = extractFirstNames(originalNames);
+
   const lastNames = originalNames.map((person) => {
       return person.lastname;
     });
@@ -71,7 +59,7 @@ export const fillLastNames = (originalNames) => {
 }
 
 export const fillEmails = (originalNames) => {
-  // const firstNames = extractFirstNames(originalNames);
+
   const emails = originalNames.map((person) => {
       return person.email;
     });

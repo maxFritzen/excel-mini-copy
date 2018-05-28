@@ -36,7 +36,7 @@ test('should set new value to email', () => {
 });
 
 test('should fill up firstnames correctly', () => {
-  const firstNames = ['Victor', 'Per']; // Tänk på att inte vara längre än inputNames
+  const firstNames = ['Victor', 'Per'];
   const action = {
     type: 'FILLFIRSTNAMES',
     firstNames

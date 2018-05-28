@@ -36,6 +36,7 @@ export const defaultState = {
 export default (state = defaultState, action) => {
   const person = state[action.id];
   switch(action.type) {
+    
     case FNAMEINPUT:
       return {
         ...state,
@@ -44,8 +45,8 @@ export default (state = defaultState, action) => {
           firstname: action.text
         }
       };
-    case LNAMEINPUT:
 
+    case LNAMEINPUT:
       return {
         ...state,
         [action.id]: {
@@ -53,8 +54,8 @@ export default (state = defaultState, action) => {
           lastname: action.text
         }
       };
-    case EMAILINPUT:
 
+    case EMAILINPUT:
       return {
         ...state,
         [action.id]: {

@@ -2,22 +2,22 @@ export const defaultState = [
   {
     firstname: "Per",
     lastname: "Gessle",
-    email: "per.gessle@epost.se"
+    email: "per.gessle@email.com"
   },
   {
     firstname: "Lisa",
     lastname: "Ekdahl",
-    email: "lisa.ekdahl@epost.se"
+    email: "lisa.ekdahl@email.com"
   },
   {
     firstname: "Sven",
     lastname: "Melander",
-    email: "sven.melander@epost.se"
+    email: "sven.melander@email.com"
   },
   {
     firstname: "Miriam",
     lastname: "Bryant",
-    email: "miriam.bryant@epost.se"
+    email: "miriam.bryant@email.com"
   }
 ]
 

@@ -8,11 +8,9 @@ import Menu from './Menu';
 const Main = (props) => (
 
   <div>
-
-    <Menu path={props.match.path}/>
+    <Menu path={props.match.path} />
     <Switch>
       <Route path={`${props.match.path}/:data`} component={SubMenu} />
-      {/* <Route path="/" component={SubMenu} /> */}
       <Redirect to={`${props.match.path}/home`} />
     </Switch>
 

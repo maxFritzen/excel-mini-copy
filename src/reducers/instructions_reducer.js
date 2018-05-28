@@ -3,17 +3,17 @@
 export const defaultState = {
   "inst1": {
     id: "inst1",
-    text: 'Fyll kolumn B med förnamnen på personerna i kolumn A',
+    text: 'Fill out column B with first names of column A',
     done: false
   },
   "inst2": {
     id: "inst2",
-    text: 'Fyll kolumn C med efternamnen på personerna i kolumn A',
+    text: 'Fill out column C with last names of column A',
     done: false
   },
   "inst3": {
     id: "inst2",
-    text: 'Fyll kolumn D med epost-adresser enligt formen "förnamn.efternamn@epost.se"',
+    text: 'Fill out column D with email addresses of column A, using the form "firstname.lastname@email.com"',
     done: false
   }
 }

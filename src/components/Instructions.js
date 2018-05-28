@@ -3,23 +3,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import LoadingPage from './LoadingPage';
 
-// const Button = withRouter(({ history }) => (
-//   <button
-//     type='button'
-//     onClick={() => { history.push('/results') }}
-//   >
-//     Click Me!
-//   </button>
-// ));
-
 class Instructions extends React.Component {
   constructor(props){
     super(props);
-
   }
   render() {
     const finished = this.props.instructions['inst1'].done && this.props.instructions['inst2'].done && this.props.instructions['inst3'].done;
     if (finished) {
+        // Illusion of loading time.
         setTimeout (() => {
           this.props.history.push('/results');
         }, 2000);
@@ -27,7 +18,7 @@ class Instructions extends React.Component {
     return (
       <div className="instructions">
         <ol className="instructions__list">
-          Lös nedanstående uppgifter med hjälp av autofyll-funktionen
+          Solve the instructions below using flash-fill button
           <li
             className={this.props.instructions['inst1'].done ? 'instructions__item--crossed' : 'instructions__item'}
             >
@@ -43,7 +34,7 @@ class Instructions extends React.Component {
             {this.props.instructions['inst3'].text}
           </li>
         </ol>
-        {finished && <p>Kalibrerar data</p>}
+        {finished && <p>Calibrating data</p>}
       </div>
 
     );
@@ -55,4 +46,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default withRouter(connect(mapStateToProps)(Instructions));
-// export default connect(mapStateToProps)(Instructions);
